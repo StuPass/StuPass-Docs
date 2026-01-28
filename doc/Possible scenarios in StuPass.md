@@ -4,6 +4,8 @@
 
 The following table outlines the permissions for the Student actor in their roles as Seller and Buyer:
 
+*NOTE: Although the Seller and Buyer have different functions, they both belong to the same role (user).
+
 | Process ID | Process Name | Student (as Seller) | Student (as Buyer) |
 | :--- | :--- | :---: | :---: |
 | P-01 | Post management | X | X |
@@ -107,4 +109,5 @@ The following table outlines the permissions for the Student actor in their role
 * Authentication `<<extends>>` Sign out
 * Sign up via Google `<<extends>>` Create profile 
 * Sign up via Facebook `<<extends>>` Create profile 
+
 * Sign up via Phone number `<<extends>>` Create profile 
