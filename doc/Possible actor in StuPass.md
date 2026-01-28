@@ -1,7 +1,7 @@
 # Possible Actors in StuPass
 
 ## User (Student)
-**Description:** The primary human actor of the system. A verified student who has authenticated into the application. This actor can switch dynamically between two sub-roles:
+**Description:** The primary human actor of the system. A verified student who has authenticated into the application. This actor can have two capacities simultaneously and perform different capabilities :
 
 * **Student as Seller**
     * Can access **Storage Management** to add/edit products.
@@ -12,4 +12,5 @@
 * **Student as Buyer**
     * Can search the **Marketplace**.
     * Communicate with sellers.
+
     * Perform **Transactions** (online or offline).
