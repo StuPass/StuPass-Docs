@@ -27,7 +27,7 @@ The following table outlines the permissions for the Student actor in their role
 | P-17 | Verify identity | X | X |
 | P-18 | Add email | X | X |
 | P-19 | Add phone number | X | X |
-| P-20 | Rating user | X | X |
+| P-20 | Rating user |  | X |
 | P-21 | Report user | X | X |
 | P-22 | Write review | X | X |
 | P-23 | Add product | X | |
@@ -107,7 +107,7 @@ The following table outlines the permissions for the Student actor in their role
 * Authentication `<<extends>>` Sign up via Facebook 
 * Authentication `<<extends>>` Sign up via Phone number
 * Authentication `<<extends>>` Sign out
-* Sign up via Google `<<extends>>` Create profile 
-* Sign up via Facebook `<<extends>>` Create profile 
+* Sign in via Google `<<extends>>` Create profile 
+* Sign in via Facebook `<<extends>>` Create profile 
+* Sign in via Phone number `<<extends>>` Create profile 
 
-* Sign up via Phone number `<<extends>>` Create profile 
