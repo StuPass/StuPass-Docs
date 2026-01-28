@@ -6,10 +6,17 @@
 * **Trigger:** Student selects the "Edit" option on their personal profile page and submits modified details (bio, contact info, avatar).
 * **Success Condition:** The system validates the input, updates the database, and displays the revised profile information to the user.
 
+### View Profile
+* **Trigger:** When a user clicks on a Seller's name from a marketplace listing.
+* **Success Condition:** The rendering of the public bio and reputation score.
+
 ### Rate User Profile
 * **Trigger:** A Buyer or Seller submits a star rating and review after a transaction is marked complete.
 * **Success Condition:** The system calculates the new average reputation score and appends the review to the target user's public profile.
 
+---
+
+## 2. Profile & Storage Processes
 ### Add Product
 * **Trigger:** Seller fills out the product details form (name, price, category, images) in the Storage section and clicks "Save".
 * **Success Condition:** A new product record is created in the database, visible in the Seller's personal inventory.
@@ -18,13 +25,17 @@
 * **Trigger:** Seller modifies details of an existing item in their inventory.
 * **Success Condition:** The product information is updated in the database and reflected in any active marketplace listings.
 
+### Remove Product
+* **Trigger:** When a Seller chooses "Delete" or "Withdraw" from the storage menu.
+* **Success Condition:** The permanent removal of the item from both inventory and marketplace.
+
 ### Search Personal Storage
 * **Trigger:** Seller or buyer enters keywords or chooses categories into the search bar within their Storage Management screen.
 * **Success Condition:** The system displays a list of personal items matching the search criteria.
 
 ---
 
-## 2. Marketplace Processes
+## 3. Marketplace Processes
 
 ### Publish Listing
 * **Trigger:** Seller selects an item from inventory and chooses to make it public on the marketplace.
@@ -40,7 +51,7 @@
 
 ---
 
-## 3. Communication Processes
+## 4. Communication Processes
 
 ### Create Group Chat
 * **Trigger:** User selects multiple contacts or a specific class/club context and initiates a conversation.
@@ -60,7 +71,7 @@
 
 ---
 
-## 4. Transaction Processes
+## 5. Transaction Processes
 
 ### Share Location
 * **Trigger:** User selects the "Share Location" feature during a chat to propose a meeting spot.
@@ -72,4 +83,5 @@
 
 ### Execute Online Payment
 * **Trigger:** Buyer confirms the checkout process for an item using an integrated payment gateway.
+
 * **Success Condition:** Funds are successfully deducted from the Buyer, held in escrow (if applicable), and a transaction receipt is generated.
