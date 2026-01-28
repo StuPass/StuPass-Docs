@@ -1,9 +1,9 @@
 # Possible Processes in StuPass
 
-## 1. Profile & Storage Processes
+## 1. Profile Processes
 
 ### Update User Profile
-* **Trigger:** Student selects the "Edit" option on their personal profile page and submits modified details (bio, contact info, avatar).
+* **Trigger:** Student selects the "Edit" option on their personal profile page and submits modified details (contact info, avatar).
 * **Success Condition:** The system validates the input, updates the database, and displays the revised profile information to the user.
 
 ### View Profile
@@ -16,7 +16,7 @@
 
 ---
 
-## 2. Profile & Storage Processes
+## 2. Storage Processes
 ### Add Product
 * **Trigger:** Seller fills out the product details form (name, price, category, images) in the Storage section and clicks "Save".
 * **Success Condition:** A new product record is created in the database, visible in the Seller's personal inventory.
@@ -85,3 +85,4 @@
 * **Trigger:** Buyer confirms the checkout process for an item using an integrated payment gateway.
 
 * **Success Condition:** Funds are successfully deducted from the Buyer, held in escrow (if applicable), and a transaction receipt is generated.
+
