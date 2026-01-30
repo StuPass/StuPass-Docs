@@ -2,32 +2,56 @@
 
 ## 1. Profile Processes
 
-### Update User Profile
-* **Trigger:** Student selects the "Edit" option on their personal profile page and submits modified details (contact info, avatar).
-* **Success Condition:** The system validates the input, updates the database, and displays the revised profile information to the user.
+### Create Profile
+- **Trigger:** A new user completes the registration process or logs in for the first time and is prompted to set up their profile.
+- **Success Condition:** The system creates a new profile with default values, saves the provided information (basic details, avatar, bio), and makes the profile accessible to the user and others according to visibility rules.
+
+### Update User Profile (Edit Profile)
+- **Trigger:** User selects the **"Edit"** option on their personal profile page and submits modified details (bio, contact info, avatar).
+- **Success Condition:** The system validates the input, updates the database, and displays the revised profile information to the user.
+
+### Add Contact Information
+- **Trigger:** User selects **"Add contact information"** while editing their profile and submits contact fields (phone number, email address, physical address, or social links).
+- **Success Condition:** The system validates contact formats, saves the updated contact details, and displays them according to the user’s visibility settings.
 
 ### View Profile
-* **Trigger:** When a user clicks on a Seller's name from a marketplace listing.
-* **Success Condition:** The rendering of the public bio and reputation score.
+- **Trigger:** User clicks on another user’s name from a marketplace listing or opens their own profile page.
+- **Success Condition:** The system displays the user’s public profile information such as avatar, bio, reputation score, and visible contact information.
 
-### Rate User Profile
-* **Trigger:** A Buyer or Seller submits a star rating and review after a transaction is marked complete.
-* **Success Condition:** The system calculates the new average reputation score and appends the review to the target user's public profile.
+### View Listing Products
+- **Trigger:** While viewing a Seller’s profile, user selects **"View listing products"**.
+- **Success Condition:** The system displays all active marketplace posts created by the seller, including basic product details such as name, price, category, and status.
+
+### View Purchased Products
+- **Trigger:** User opens their own profile and selects **"View purchased products"**.
+- **Success Condition:** The system displays the user’s purchase history, including purchased items, prices, purchase dates, and order statuses.
+
+### Report User
+- **Trigger:** While viewing a profile, user selects **"Report user"**, chooses a report reason, and submits the report.
+- **Success Condition:** The system records the report with the reporter ID, reported user ID, reason, and timestamp, and confirms successful submission for moderation review.
+
+### Delete Profile
+- **Trigger:** User selects the **"Delete Profile"** option from account settings and confirms the action.
+- **Success Condition:** The system permanently removes or deactivates the profile, revokes public access, and confirms the deletion to the user while preserving required audit or transaction records.
 
 ---
 
 ## 2. Storage Processes
 ### Add Product
-* **Trigger:** Seller fills out the product details form (name, price, category, images) in the Storage section and clicks "Save".
-* **Success Condition:** A new product record is created in the database, visible in the Seller's personal inventory.
+* **Trigger:** Seller fills out the product details form (name, price, category, images) in the Storage section and clicks **Save**.
+* **Success Condition:** A new product record is created in the database, visible in the Seller's personal storage.
 
 ### Edit Product
-* **Trigger:** Seller modifies details of an existing item in their inventory.
+* **Trigger:** Seller modifies details of an existing item in their storage.
 * **Success Condition:** The product information is updated in the database and reflected in any active marketplace listings.
 
-### Remove Product
-* **Trigger:** When a Seller chooses "Delete" or "Withdraw" from the storage menu.
-* **Success Condition:** The permanent removal of the item from both inventory and marketplace.
+### View All Products
+* **Trigger:** Seller or buyer navigates to the Storage screen.
+* **Success Condition:** The system retrieves and displays the complete list of available products associated with the user, including basic details such as name, price, status, and category.
+
+### Delete Product
+* **Trigger:** When a Seller chooses **Delete** from the storage menu.
+* **Success Condition:** The permanent removal of the item from both storage and marketplace.
 
 ### Search Personal Storage
 * **Trigger:** Seller or buyer enters keywords or chooses categories into the search bar within their Storage Management screen.
@@ -37,52 +61,92 @@
 
 ## 3. Marketplace Processes
 
-### Publish Listing
-* **Trigger:** Seller selects an item from inventory and chooses to make it public on the marketplace.
-* **Success Condition:** The product becomes visible to all users in the main marketplace feed.
+### Add Post
+- **Trigger:** Seller selects the **"Add"** option, chooses an item from storage, and confirms publishing it on the marketplace.
+- **Success Condition:** A new marketplace post is created and becomes visible to all users in the main marketplace feed.
+
+### View All Posts
+- **Trigger:** Seller or buyer navigates to the Marketplace screen.
+- **Success Condition:** The system retrieves and displays a list of active posts, including basic details such as title, price, category, condition, and post status.
+
+### View Detail Post
+- **Trigger:** Buyer clicks a post card from the marketplace feed or search results.
+- **Success Condition:** The system displays full post details, including images, description, seller information, price, and available actions.
 
 ### Search Marketplace Listings
-* **Trigger:** Buyer enters keywords (e.g., "Calculus Textbook") into the global search bar.
-* **Success Condition:** The system retrieves and displays a list of active product listings matching the keywords.
+- **Trigger:** Buyer enters keywords (e.g., "Calculus Textbook") into the marketplace search bar.
+- **Success Condition:** The system retrieves and displays posts matching the search keywords.
 
-### Filter Listings
-* **Trigger:** Buyer applies constraints (e.g., Price Range, Category, Condition) to search results.
-* **Success Condition:** The displayed list is refined to show only items meeting the selected criteria.
+### Filter Listings (Search + Filter)
+- **Trigger:** Buyer applies filters such as price range, category, condition, or sorting options.
+- **Success Condition:** The displayed list is refined to show only posts that match the selected criteria.
+
+### Edit Post
+- **Trigger:** Seller selects **"Edit"** on one of their published posts and modifies post details.
+- **Success Condition:** The system updates the post information in the database and reflects the changes in the marketplace listings.
+
+### Delete Post
+- **Trigger:** Seller selects **"Delete"** on a post and confirms the action.
+- **Success Condition:** The post is removed from public marketplace views and search results.
+
+### Undo Delete
+- **Trigger:** Seller selects **"Undo Delete"** on a recently deleted post.
+- **Success Condition:** The system restores the post and makes it visible again in the marketplace.
+
+### Report Post
+- **Trigger:** Buyer selects **"Report"** on a post and submits a report reason.
+- **Success Condition:** The system records the report and confirms successful submission for moderation review.
 
 ---
 
 ## 4. Communication Processes
 
-### Create Group Chat
-* **Trigger:** User selects multiple contacts or a specific class/club context and initiates a conversation.
-* **Success Condition:** A new shared chat room is instantiated, allowing all selected members to send and receive messages.
+### Create Chat Box
+- **Trigger:** User clicks **“Message / Chat”** on another user’s profile (Shop or Shipper) or from an order details page.
+- **Success Condition:** The system creates a new conversation thread (or reopens an existing one) and displays it in the chat box list.
+
+### View All Chat Boxes
+- **Trigger:** User opens the Communication / Inbox screen.
+- **Success Condition:** The system loads and displays all conversation threads the user participates in, sorted by latest activity and showing unread indicators.
+
+### View a Chat Box
+- **Trigger:** User selects a specific conversation from the chat box list.
+- **Success Condition:** The system loads the full conversation history, displays messages in chronological order, and marks unread messages as read.
+
+### Find Chat Box
+- **Trigger:** User enters a keyword (user name, order ID, or message content) into the chat search bar.
+- **Success Condition:** The system returns matching conversation threads and allows the user to open a selected chat.
 
 ### Send Message
-* **Trigger:** User types text or attaches media in a chat box and hits "Send".
-* **Success Condition:** The message is delivered to the recipient(s) and persistently stored in the conversation history.
+- **Trigger:** User types text or attaches media in a chat box and clicks **“Send”**.
+- **Success Condition:** The message is delivered to the recipient(s) and persistently stored in the conversation history.
+
+### Initiate Voice Call
+- **Trigger:** User clicks the **voice call** icon within an active chat box.
+- **Success Condition:** The system establishes a real-time voice connection between participants and displays the in-call interface.
 
 ### Initiate Video Call
-* **Trigger:** User clicks the video call icon within an active chat box.
-* **Success Condition:** The system establishes a real-time video connection between the participants.
+- **Trigger:** User clicks the **video call** icon within an active chat box.
+- **Success Condition:** The system establishes a real-time video connection between participants.
+
+### Turn On / Off Microphone
+- **Trigger:** During a voice or video call, user taps the **microphone toggle** button.
+- **Success Condition:** The system mutes or unmutes the user’s audio stream and updates the microphone status indicator.
+
+### Turn On / Off Camera
+- **Trigger:** During a video call, user taps the **camera toggle** button.
+- **Success Condition:** The system disables or enables the video stream and updates the camera status indicator.
+
+### Switch Camera
+- **Trigger:** During a video call, user taps the **switch camera** button.
+- **Success Condition:** The system switches between available cameras (front/back) without interrupting the call.
 
 ### Archive Conversation (Hide Chat Box)
-* **Trigger:** User selects the "Hide" or "Archive" option on a specific conversation thread.
-* **Success Condition:** The chat box is removed from the active "View All" list but remains accessible in the archive.
+- **Trigger:** User selects **“Hide”** or **“Archive”** on a conversation thread.
+- **Success Condition:** The chat box is removed from the active conversation list while remaining accessible in the archive.
 
----
+### Undo Hide (Restore Conversation)
+- **Trigger:** User selects **“Restore”** or **“Undo Hide”** from the archived conversations list.
+- **Success Condition:** The conversation is restored to the active chat box list.
 
-## 5. Transaction Processes
-
-### Share Location
-* **Trigger:** User selects the "Share Location" feature during a chat to propose a meeting spot.
-* **Success Condition:** The system retrieves geospatial data and renders a map pin in the chat window visible to the recipient.
-
-### Schedule Meeting
-* **Trigger:** Users agree on a time and confirm a meeting request form within the chat.
-* **Success Condition:** An appointment is created and added to the internal calendar/schedule for both users.
-
-### Execute Online Payment
-* **Trigger:** Buyer confirms the checkout process for an item using an integrated payment gateway.
-
-* **Success Condition:** Funds are successfully deducted from the Buyer, held in escrow (if applicable), and a transaction receipt is generated.
 
