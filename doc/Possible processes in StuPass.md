@@ -149,4 +149,38 @@
 - **Trigger:** User selects **“Restore”** or **“Undo Hide”** from the archived conversations list.
 - **Success Condition:** The conversation is restored to the active chat box list.
 
+---
+
+## 5. Authentication Processes
+
+### Sign Up
+- **Trigger:** User selects the **"Sign up"** option from the authentication screen and provides required registration information.
+- **Success Condition:** The system validates the input, creates a new user account, and proceeds to profile creation or initial setup.
+
+### Sign In
+- **Trigger:** User selects the **"Sign in"** option and enters valid authentication credentials.
+- **Success Condition:** The system authenticates the user successfully and grants access to the application.
+
+### Sign In via Google
+- **Trigger:** User selects **"Sign in via Google"** from the sign-in screen.
+- **Success Condition:** The system authenticates the user using Google OAuth and signs the user into the system.
+
+### Sign In via Phone Number
+- **Trigger:** User selects **"Sign in via Phone Number"**, enters their phone number, and confirms the verification code.
+- **Success Condition:** The system verifies the phone number, authenticates the user, and grants access to the application.
+
+### Sign Out
+- **Trigger:** User selects **"Sign out"** from the account menu.
+- **Success Condition:** The system terminates the current session and redirects the user to the authentication screen.
+
+### Forgot Password
+- **Trigger:** User selects **"Forgot password"** on the sign-in screen and submits their registered email or phone number.
+- **Success Condition:** The system sends a password reset link or verification code to the user.
+
+### Change Password
+- **Trigger:** Authenticated user selects **"Change password"** from account settings or completes password reset flow.
+- **Success Condition:** The system validates the new password, updates credentials securely, and confirms the password change.
+
+---
+
 
