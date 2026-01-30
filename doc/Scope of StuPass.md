@@ -14,34 +14,49 @@
 
 ## 2. In-Scope Functionalities (MVP)
 
-### A. User Profile & Trust
+### A. Authentication & Access Control
+
+* **User Registration:** Users can sign up using supported methods (Email/Phone, Google).
+* **User Login:** Registered users can sign in securely to access system features.
+* **Session Management:** The system maintains authenticated sessions and supports user sign-out.
+* **Password Recovery:** Users can reset or change passwords through a secure recovery mechanism
+
+### B. User Profile & Trust
 * **Student Verification:** Implicit authentication mechanisms to ensure users are valid students.
 * **Profile Management:** Capability for users to update personal details (Bio, Contact Info).
-* **Reputation System:** A rating and review mechanism allowing buyers and sellers to score each other after interactions.
+* **Reputation System:** An automatic rating mechanism based on reports from users.
 
-### B. Inventory & Marketplace
+### C. Inventory & Marketplace
 * **Inventory Management:** Sellers can add and edit item details (Images, Price, Description, Category) in their personal storage.
 * **Internal Search:** Sellers can search within their own inventory.
 * **Discovery Engine:** Buyers can search the global marketplace and apply filters (Price, Category) to refine results.
 
-### C. Communication Hub
+### D. Communication Hub
 * **Direct Messaging:** One-on-one text and media messaging between Buyer and Seller.
 * **Group Collaboration:** Capability to create group chats for class-based or club-based trading.
 * **Real-time Communication:** Integrated Video Call feature for product inspection or verification.
 * **Inbox Management:** Ability to archive or hide inactive conversations.
 
-### D. Transaction & Logistics
-* **Offline Coordination:** Tools to assist physical meetups, including Location Sharing and Meeting Scheduling.
-* **Online Payment:** Integration with a payment gateway to process secure online transfers for items.
-
 ---
 
-## 3. Out-of-Scope Functionalities (Deferred/Discarded)
-The following features have been explicitly considered and excluded from the MVP scope to reduce complexity and adhere to the project constraints.
+## 3. Out-of-Scope Functionalities (Deferred / Discarded)
 
-* **Automated Dispute Resolution (Refunds):** As Request Refund (P-16) was removed, the system will not support an automated refund workflow. Disputes must be handled manually via external support channels.
-* **Manual Publishing Workflow:** As Publish Listing (P-06) was removed, there will be no draft/preview mode. Items added to storage are either immediately live or managed via a simplified toggle, removing the need for a complex publishing wizard.
-* **Integrated Logistics/Shipping:** The system relies entirely on user-coordinated meetups (Offline) or user-arranged shipping. There is no integration with delivery services (e.g., GrabExpress, AhaMove).
-* **Bidding/Auctions:** The marketplace operates on a fixed-price model. Auction-style bidding capabilities are excluded.
-* **Guest/Anonymous Access:** Unregistered users cannot view listings or interact with the app. Strict student authentication is required for all access.
-* **Shopping Cart:** As a C2C platform focusing on individual items, there is no "Cart" functionality for accumulating items from different sellers into a single checkout. All transactions are direct single-item or negotiated bulk purchases.
+The following functionalities were deliberately excluded from the MVP to reduce implementation complexity, maintain focus on core objectives, and comply with project constraints.
+
+- **Automated Dispute Resolution and Refunds:**  
+  The system does not support automated dispute handling or refund workflows. Any conflicts between users must be resolved manually through direct communication or external support channels.
+
+- **Advanced Publishing Workflow:**  
+  Draft, preview, or multi-step publishing processes are not included. Marketplace items are published through a simplified mechanism without approval stages or complex publishing wizards.
+
+- **Integrated Logistics and Shipping Services:**  
+  There is no integration with third-party logistics or delivery services. Item exchanges and shipping arrangements are entirely coordinated by users outside the platform.
+
+- **Bidding and Auction Mechanisms:**  
+  The marketplace follows a fixed-price model only. Auction-style bidding, dynamic pricing, or competitive bidding features are excluded.
+
+- **Guest or Anonymous Access:**  
+  Access to the platform is restricted to authenticated users. Unregistered or anonymous users cannot view listings, profiles, or interact with the system.
+
+- **Shopping Cart and Multi-Item Checkout:**  
+  The system does not provide a shopping cart or bundled checkout functionality. Each item interaction is handled individually, aligning with the peer-to-peer nature of the platform.
