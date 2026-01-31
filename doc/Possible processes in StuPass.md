@@ -6,11 +6,11 @@
 - **Trigger:** A new user completes the registration process or logs in for the first time and is prompted to set up their profile.
 - **Success Condition:** The system creates a new profile with default values, saves the provided information (basic details, avatar, bio), and makes the profile accessible to the user and others according to visibility rules.
 
-### Update User Profile (Edit Profile)
+### Edit Profile
 - **Trigger:** User selects the **"Edit"** option on their personal profile page and submits modified details (bio, contact info, avatar).
 - **Success Condition:** The system validates the input, updates the database, and displays the revised profile information to the user.
 
-### Add Contact Information
+### Add Contact Information *(«extends» Edit Profile)*
 - **Trigger:** User selects **"Add contact information"** while editing their profile and submits contact fields (phone number, email address, physical address, or social links).
 - **Success Condition:** The system validates contact formats, saves the updated contact details, and displays them according to the user’s visibility settings.
 
@@ -18,15 +18,15 @@
 - **Trigger:** User clicks on another user’s name from a marketplace listing or opens their own profile page.
 - **Success Condition:** The system displays the user’s public profile information such as avatar, bio, reputation score, and visible contact information.
 
-### View Listing Products
-- **Trigger:** While viewing a Seller’s profile, user selects **"View listing products"**.
+### View Listing Product *(«extends» View Profile)*
+- **Trigger:** While viewing a Seller's profile, user selects **"View listing products"**.
 - **Success Condition:** The system displays all active marketplace posts created by the seller, including basic product details such as name, price, category, and status.
 
-### View Purchased Products
+### View Purchased Product *(«extends» View Profile)*
 - **Trigger:** User opens their own profile and selects **"View purchased products"**.
-- **Success Condition:** The system displays the user’s purchase history, including purchased items, prices, purchase dates, and order statuses.
+- **Success Condition:** The system displays the user's purchase history, including purchased items, prices, purchase dates, and order statuses.
 
-### Report User
+### Report User *(«extends» View Profile)*
 - **Trigger:** While viewing a profile, user selects **"Report user"**, chooses a report reason, and submits the report.
 - **Success Condition:** The system records the report with the reporter ID, reported user ID, reason, and timestamp, and confirms successful submission for moderation review.
 
@@ -37,6 +37,7 @@
 ---
 
 ## 2. Storage Processes
+
 ### Add Product
 * **Trigger:** Seller fills out the product details form (name, price, category, images) in the Storage section and clicks **Save**.
 * **Success Condition:** A new product record is created in the database, visible in the Seller's personal storage.
@@ -45,16 +46,16 @@
 * **Trigger:** Seller modifies details of an existing item in their storage.
 * **Success Condition:** The product information is updated in the database and reflected in any active marketplace listings.
 
-### View All Products
-* **Trigger:** Seller or buyer navigates to the Storage screen.
+### View All Product
+* **Trigger:** Seller navigates to the Storage screen.
 * **Success Condition:** The system retrieves and displays the complete list of available products associated with the user, including basic details such as name, price, status, and category.
 
 ### Delete Product
 * **Trigger:** When a Seller chooses **Delete** from the storage menu.
 * **Success Condition:** The permanent removal of the item from both storage and marketplace.
 
-### Search Personal Storage
-* **Trigger:** Seller or buyer enters keywords or chooses categories into the search bar within their Storage Management screen.
+### Search Product
+* **Trigger:** Seller enters keywords or chooses categories into the search bar within their Storage Management screen.
 * **Success Condition:** The system displays a list of personal items matching the search criteria.
 
 ---
@@ -65,20 +66,16 @@
 - **Trigger:** Seller selects the **"Add"** option, chooses an item from storage, and confirms publishing it on the marketplace.
 - **Success Condition:** A new marketplace post is created and becomes visible to all users in the main marketplace feed.
 
-### View All Posts
+### View All Post
 - **Trigger:** Seller or buyer navigates to the Marketplace screen.
 - **Success Condition:** The system retrieves and displays a list of active posts, including basic details such as title, price, category, condition, and post status.
 
-### View Detail Post
+### View Detail Post *(«extends» View All Post)*
 - **Trigger:** Buyer clicks a post card from the marketplace feed or search results.
 - **Success Condition:** The system displays full post details, including images, description, seller information, price, and available actions.
 
-### Search Marketplace Listings
-- **Trigger:** Buyer enters keywords (e.g., "Calculus Textbook") into the marketplace search bar.
-- **Success Condition:** The system retrieves and displays posts matching the search keywords.
-
-### Filter Listings (Search + Filter)
-- **Trigger:** Buyer applies filters such as price range, category, condition, or sorting options.
+### Search + Filter *(«extends» View All Post)*
+- **Trigger:** Buyer enters keywords into the marketplace search bar and/or applies filters such as price range, category, condition, or sorting options.
 - **Success Condition:** The displayed list is refined to show only posts that match the selected criteria.
 
 ### Edit Post
@@ -89,7 +86,7 @@
 - **Trigger:** Seller selects **"Delete"** on a post and confirms the action.
 - **Success Condition:** The post is removed from public marketplace views and search results.
 
-### Undo Delete
+### Undo Delete *(«extends» Delete Post)*
 - **Trigger:** Seller selects **"Undo Delete"** on a recently deleted post.
 - **Success Condition:** The system restores the post and makes it visible again in the marketplace.
 
@@ -102,14 +99,14 @@
 ## 4. Communication Processes
 
 ### Create Chat Box
-- **Trigger:** User clicks **“Message / Chat”** on another user’s profile (Shop or Shipper) or from an order details page.
+- **Trigger:** User clicks **"Message / Chat"** on another user's profile or from a post details page.
 - **Success Condition:** The system creates a new conversation thread (or reopens an existing one) and displays it in the chat box list.
 
-### View All Chat Boxes
+### View All Chat Box
 - **Trigger:** User opens the Communication / Inbox screen.
 - **Success Condition:** The system loads and displays all conversation threads the user participates in, sorted by latest activity and showing unread indicators.
 
-### View a Chat Box
+### View a Chat Box *(«extends» View All Chat Box)*
 - **Trigger:** User selects a specific conversation from the chat box list.
 - **Success Condition:** The system loads the full conversation history, displays messages in chronological order, and marks unread messages as read.
 
@@ -141,11 +138,11 @@
 - **Trigger:** During a video call, user taps the **switch camera** button.
 - **Success Condition:** The system switches between available cameras (front/back) without interrupting the call.
 
-### Archive Conversation (Hide Chat Box)
-- **Trigger:** User selects **“Hide”** or **“Archive”** on a conversation thread.
+### Hide Chat Box
+- **Trigger:** User selects **"Hide"** or **"Archive"** on a conversation thread.
 - **Success Condition:** The chat box is removed from the active conversation list while remaining accessible in the archive.
 
-### Undo Hide (Restore Conversation)
+### Undo Hide *(«extends» Hide Chat Box)*
 - **Trigger:** User selects **“Restore”** or **“Undo Hide”** from the archived conversations list.
 - **Success Condition:** The conversation is restored to the active chat box list.
 
@@ -161,11 +158,11 @@
 - **Trigger:** User selects the **"Sign in"** option and enters valid authentication credentials.
 - **Success Condition:** The system authenticates the user successfully and grants access to the application.
 
-### Sign In via Google
+### Sign In via Google *(«extends» Sign In)*
 - **Trigger:** User selects **"Sign in via Google"** from the sign-in screen.
 - **Success Condition:** The system authenticates the user using Google OAuth and signs the user into the system.
 
-### Sign In via Phone Number
+### Sign In via Phone Number *(«extends» Sign In)*
 - **Trigger:** User selects **"Sign in via Phone Number"**, enters their phone number, and confirms the verification code.
 - **Success Condition:** The system verifies the phone number, authenticates the user, and grants access to the application.
 
@@ -182,5 +179,3 @@
 - **Success Condition:** The system validates the new password, updates credentials securely, and confirms the password change.
 
 ---
-
-
