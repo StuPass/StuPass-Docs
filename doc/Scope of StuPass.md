@@ -3,10 +3,10 @@
 ## 1. Statement of Context
 
 **What StuPass IS:**
-> StuPass is a specialized Consumer-to-Consumer (C2C) mobile marketplace designed for university students. It facilitates the exchange of unused personal items. The platform focuses on two primary interaction models: direct physical exchange (pay offline) and secure digital transaction (pay online).
+> StuPass is a specialized Consumer-to-Consumer (C2C) mobile marketplace targeted toward university students. It facilitates the exchange of unused personal items. StuPass focuses on creating a platform to streamline the discovery of affordable second-hand goods within a verified campus network. It functions primarily as a listing directory and introduction service, bridging the gap between student buyers and sellers to arrange independent, offline transactions.
 
 **What StuPass IS NOT:**
-> StuPass is not a general-purpose e-commerce platform for professional retailers or businesses. It does not handle logistics, shipping, or third-party delivery services. It is not a social media platform; communication features are strictly functional to facilitate trade.
+> StuPass is not a general-purpose e-commerce platform for professional retailers or businesses. It does not handle logistics, shipping, or third-party delivery services. It is not a social media platform; communication features are strictly functional to facilitate trade. It does not process payments, hold funds, or facilitate digital transactions. It is not a multimedia communication platform; messaging is restricted to text-based coordination.
 
 ---
 
